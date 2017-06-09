@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ASP NET MVC</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/index.css">
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.20.min.js")" type="text/javascript"></script>
+</head>
+<body>
+    <div class="form-group" style="margin-top: 50px">
+        <form method="post" asp-controller="Home" asp-action="AddUser"  id="myform">
+            <label>FirstName:</label>
+            <input name="FirstName" id="fname" class="input-group" type="text" />
+            <label>LastName:</label>
+            <input name="LastName" id="lname" class="input-group" type="text" />
+            <label>Email:</label>
+            <input name="Email" id="email" class="input-group" type="text" />
+            <label>Post title:</label>
+            <input name="Title" id="title" class="input-group" type="text" />
+            <input id="add" class="btn btn-success" type="submit" value="Add to list" />
+        </form>
+    </div>
+    <div>
+        <table id="user-list" class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Post</th>
+                <th>Date</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.ID
+                    </td>
+                    <td>
+                       @item.FirstName
+                    </td>
+                    <td>
+                       @item.LastName
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        @item.UserPost.Title
+                    </td>
+                    <td>
+                       @item.UserPost.Date
+                    </td>
+                </tr>
+                }
+            <div>
+                @{Html.RenderPartial("UsersData");}
+                </div>
+</table>  
+    </div>
+    <div class="panel-footer">
+        <h3>@ViewBag.Msg</h3>
+    </div>
+    <script type="text/javascript">
+        $('#add').click(function () {
+            user = {
+                fname: $('#fname').val,
+                lname: $('#lname').val,
+                email: $('#email').val,
+                title: $('#title').val
+            };
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:51520/Home/UserAdd',
+                data: {name:"oleh"},
+                success: function (data) {
+                    $('.panel-footer').html(data);
+                }
+            });
+        };
+    </script>
+</body>
+</html>
+

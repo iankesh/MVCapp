@@ -1,0 +1,26 @@
+﻿@using ASP_Test.Models;
+@model IEnumerable<User>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @item.ID
+        </td>
+        <td>
+            @item.FirstName
+        </td>
+        <td>
+            @item.LastName
+        </td>
+        <td>
+            @item.Email
+        </td>
+        <td>
+            @item.UserPost.Title
+        </td>
+        <td>
+            @item.UserPost.Date
+        </td>
+    </tr>
+}

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Users>
+   <User>
+     <ID>1</ID>
+     <FirstName>Joe</FirstName>
+     <LastName>Smith</LastName>
+     <Email>example@mail.com</Email>
+     <Post>
+       <Title>LOL</Title>
+       <Content>Looool</Content>
+       <Date>1/2/2017</Date>
+     </Post>
+   </User>
+</Users>
