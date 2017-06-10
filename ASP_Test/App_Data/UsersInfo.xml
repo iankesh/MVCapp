@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <ID>4895419873576937401</ID>
+    <FirstName>Oleshik</FirstName>
+    <LastName>Melnyk</LastName>
+    <Email>mr.oleg.melnyk@gmail.com</Email>
+  </User>
+  <User>
+    <ID>5656994324633132558</ID>
+    <FirstName>randomName1</FirstName>
+    <LastName>randomName2</LastName>
+    <Email>random@random.com</Email>
+  </User>
+</ArrayOfUser>
